@@ -1,0 +1,16 @@
+<header id="header">
+    <div id="fijo">
+        <span id="menu-title">FG<strong>WEB</strong></span>
+        <span id="menu-toggle" (click)="menu()"><ion-icon name="menu-outline"></ion-icon></span>
+        <div class="clearfix"></div>
+    </div>
+    <nav id="menu">
+        <ul>
+            <li><span (click)="leave('home')">INICIO</span></li>
+            <li><span (click)="leave('sobre-mi')">SOBRE MI</span></li>
+            <li id="logo"><span id="logo-animado"><ion-icon name="logo-electron"></ion-icon></span></li>
+            <li><span (click)="leave('trabajos')">TRABAJOS</span></li>
+            <li><span (click)="leave('contacto')">CONTACTO</span></li>
+        </ul>
+    </nav>
+</header>

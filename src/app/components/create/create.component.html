@@ -1,0 +1,56 @@
+<div class="total" id="crear">
+    <div class="content-create">
+            <form id="create-project" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+                <div>
+                    <label for="name">Nombre</label><br>
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required><br>
+                    <span class="required-form" *ngIf="name.touched && !name.valid">
+                        Nombre obligatorio
+                    </span>
+                </div>
+
+                <div>
+                    <label for="category">Categoria</label><br>
+                    <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+                    <span class="required-form" *ngIf="category.touched && !category.valid">
+                        Categoria obligatoria
+                    </span>
+                </div>
+                <div>
+                    <label for="lang">Lenguajes</label><br>
+                    <input type="text" name="lang" #lang="ngModel" [(ngModel)]="project.lang" required>
+                    <span class="required-form" *ngIf="lang.touched && !lang.valid">
+                        Lenguajes obligatorios
+                    </span>
+                </div>
+                <div>
+                    <label for="year">Fecha de realizacion</label><br>
+                    <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required>
+                    <span class="required-form" *ngIf="year.touched && !year.valid">
+                        Fecha obligatoria
+                    </span>
+                </div>
+                <div class="form-big">
+                    <label for="url">Url de la web</label><br>
+                    <input type="text" name="url" #url="ngModel" [(ngModel)]="project.url" required>
+                    <span class="required-form" *ngIf="url.touched && !url.valid">
+                        Url obligatoria
+                    </span>
+                </div>
+                <div class="form-big">
+                    <label for="description">Descripcion</label><br>
+                    <textarea name="description" #description="ngModel" [(ngModel)]="project.description"
+                        required></textarea>
+                    <span class="required-form-big" *ngIf="description.touched && !description.valid">
+                        La descipcion es obligatoria
+                    </span>
+                </div>
+                <div class="form-big">
+                    <label for="image">Imagen</label><br>
+                    <input type="file" name="image" (change)="fileChangeEvent($event)">
+                </div>
+
+                <input type="submit" value="Guardar Proyecto" [disabled]="!projectForm.form.valid">
+            </form>
+        </div>
+</div>

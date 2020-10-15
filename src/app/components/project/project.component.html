@@ -1,0 +1,39 @@
+<div class="total" id="trabajos" [@enterState]>
+    <div class="content-project">
+        <div *ngIf="!project" id="loading">
+            <img src="../../../assets/img/load.gif" alt="Loading..">
+        </div>
+        <div *ngIf="project" id="sub-title" @enterState>
+            <h2>{{project.name}}</h2>
+            <hr>
+            <div id="single-project">
+                <div id="project-info">
+                    <img src="{{url+'get-image/'+project.image}}" alt="">
+                    <img *ngIf="!project.image" src="https://via.placeholder.com/500"><br>
+                    <span>{{project.category}} | {{project.year}}</span>
+                </div>
+
+                <div id="project-description">
+                    <span>
+                        <p id="title-description">
+                            Descripcion
+                        </p>
+                        <p id="description-text">{{project.description}}</p>
+
+                    </span>
+                    <a href="https://{{project.url}}" target="_blank">Ir a la web</a>
+                    <section id="langs">
+                        Desarrollado con: {{project.lang}}
+                    </section>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+            <div id="buttons" *ngIf="login">
+                <button (click)="goPanel()">Ir al panel</button>
+            </div>
+        </div>
+    </div>
+</div>

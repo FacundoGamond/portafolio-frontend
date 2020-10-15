@@ -1,0 +1,23 @@
+<div class="total" id="trabajos" [@enterState]>
+    <div class="content-projects">
+        <div *ngIf="!projects" id="loading" >
+            <img src="../../../assets/img/load.gif" alt="Loading..">
+        </div>
+        <h2 *ngIf="projects">Trabajos</h2>
+        <div id="projects-content">
+            <div id="projects">
+                <article *ngFor="let project of projects" class="project" (click)="getProject(project._id)">
+                    <img *ngIf="url+'get-image/'+project.image" src="{{url+'get-image/'+project.image}}">
+                    <img *ngIf="!(url+'get-image/'+project.image)" src="../../../assets/img/load.gif"><br>
+                    <span id="title">
+                        <span>{{project.name}}</span>
+                        <p>{{project.category}}</p>
+                    </span>
+                </article>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
