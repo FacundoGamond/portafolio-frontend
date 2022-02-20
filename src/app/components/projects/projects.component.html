@@ -3,7 +3,7 @@
         <div *ngIf="!projects" id="loading" >
             <img src="../../../assets/img/load.gif" alt="Loading..">
         </div>
-        <h2 *ngIf="projects">Trabajos</h2>
+        <h2 *ngIf="projects">Projects</h2>
         <div id="projects-content">
             <div id="projects">
                 <article *ngFor="let project of projects" class="project" (click)="getProject(project._id)">

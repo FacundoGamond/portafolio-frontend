@@ -1,51 +1,51 @@
 <div class="total" id="contacto" [@enterState]>
     <div class="content-contact">
-        <h2>Contacto</h2>
+        <h2>Contact</h2>
         <div *ngIf="!sended" id="loading">
             <img src="../../../assets/img/load.gif">
         </div>
         <div *ngIf="sended" id="contact">
             <form id="contact-form" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
                 <div>
-                    <label for="name">Nombre</label><br>
+                    <label for="name">Name</label><br>
                     <input type="text" name="name" #name="ngModel" [(ngModel)]="emailData.name" required><br>
                     <span class="required-form" *ngIf="name.touched && !name.valid">
-                        Nombre obligatorio
+                        Obligatory field
                     </span>
                 </div>
 
                 <div>
-                    <label for="last_name">Apellido</label><br>
+                    <label for="last_name">Last Name</label><br>
                     <input type="text" name="last_name" #last_name="ngModel" [(ngModel)]="emailData.lastName" required>
                     <span class="required-form" *ngIf="last_name.touched && !last_name.valid">
-                        Apellido obligatorio
+                        Obligatory field
                     </span>
                 </div>
                 <div>
                     <label for="email">Email</label><br>
                     <input type="text" name="email" #email="ngModel" [(ngModel)]="emailData.email" required>
                     <span class="required-form" *ngIf="email.touched && !email.valid">
-                        Email obligatorio
+                        Obligatory field
                     </span>
                 </div>
                 <div>
-                    <label for="phone">Telefono/Celular</label><br>
+                    <label for="phone">Phone</label><br>
                     <input type="number" name="phone" #phone="ngModel" [(ngModel)]="emailData.phone" required>
                     <span class="required-form" *ngIf="phone.touched && !phone.valid">
-                        Telefono obligatorio
+                        Obligatory field
                     </span>
                 </div>
                 <div class="form-big">
-                    <label for="consult">Consulta</label><br>
+                    <label for="consult">Message</label><br>
                     <textarea name="consult" #consult="ngModel" [(ngModel)]="emailData.consult" required></textarea>
                     <span class="required-form-big" *ngIf="consult.touched && !consult.valid">
-                        Consulta obligatoria
+                        Obligatory field
                     </span>
                 </div>
                 <br>
                 <br>
                 <br>
-                <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+                <input type="submit" value="Send" [disabled]="!projectForm.form.valid">
             </form>
         </div>
     </div>
